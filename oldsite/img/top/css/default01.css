@@ -1,0 +1,466 @@
+/* CSS Document */
+
+/*■初期設定*/
+
+body{
+	background-color:#000000;/*背景の色*/
+	background-image:url(../img/bg_times.gif);
+	color:#cccccc;/*通常のテキストカラー*/
+	}
+a{
+	color:#0099FF;/*通常のリンクテキストカラー*/
+	}
+a:hover{
+	color:#FF9900;/*マウスが乗った時の通常のリンクテキストカラー*/
+	text-decoration:underline;/*マウスが乗った時下線を表示（つけない場合は underline を none へ）*/
+	}
+
+/*■初期設定ここまで*/
+
+
+
+*{ margin:0; padding:0;}
+img{border:0;}
+
+table,div{
+	margin:auto;
+	}
+
+/*■フォントサイズ調整*/
+body {
+    font-size: 12px; /* モダンブラウザ */
+    *font-size: 80%; /* IE 7 */
+    *font: 80%; /* IE 6以下 */
+}
+
+body{
+	text-align:center;
+	}
+
+/*■レイアウトセレクタ*/
+.CNT{
+	text-align:center;
+	}
+.L{
+	text-align:left;
+	}
+.R{
+	text-align:right;
+	}
+
+
+/*■基本レイアウト*/
+#bg{
+	width:820px;
+	background:url(../img/bg_con.jpg) repeat-y;
+	text-align:center;
+}
+#container{
+	width:100%;
+	margin:10px;
+	text-align:left;
+	}
+#head{
+	margin:20px;
+}
+#head h1{
+	height:20px;
+	line-height:16px;
+	font-size:95%;
+	color:#CCCCCC;
+	font-weight:normal;
+	text-indent:10px;
+	}
+#head h2{
+	padding:4px 0 0 10px;
+	font-weight:normal;
+	font-family:'メイリオ',Meiryo,'ＭＳ 明朝',sans-serif;
+	}
+#head h2 a{
+	font-size:200%;
+	line-height:140%;
+	vertical-align:top;
+	text-decoration:none;
+	color:#CCCCCC;
+	font-weight:normal;
+	filter: glow(color=#666666,strength=100);
+	}
+#head h2 a:hover{
+	font-size:200%;
+	line-height:140%;
+	vertical-align:top;
+	text-decoration:none;
+	color:#CCCCCC;
+	}
+
+#head_menu{
+	height:42px;
+	zoom:100%;
+	}
+
+#head_menu ul *{
+	list-style-type:none;
+	display:block;}
+#head_menu ul li{
+	width:160px;
+	height:42px;
+	position:relative;
+	float:left;
+	}
+#head_menu ul li a{
+	width:160px;
+	height:42px;
+	text-align:center;
+	color:#FFFFFF;
+	line-height:42px;
+	text-decoration:none;
+	}
+#head_menu ul li a:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+	}
+#head_menu ul li.off{
+	overflow:hidden;
+	width:160px;
+	}
+#head_menu ul li.off ol.sub{
+	left:0px; top:-999px;
+	}
+#head_menu ul ol.sub{
+	position:absolute;
+	left:0px; top:42px;
+	width:160px;
+	border:1px solid #999999;
+	text-align:center;
+	}
+#head_menu ul li.on{
+	width:160px;
+	}
+#head_menu ul>li.on{
+	overflow:visible;/*×*/
+	}
+#head_menu ul ol.sub li{
+	width:160px;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px solid #999999;
+	text-align:center;
+	float:none;
+	filter:alpha(opacity=85); /*IE*/
+	-moz-opacity:0.85; /*FF*/
+	}
+#head_menu ul ol.sub li a{
+	background:none;
+	background-color:#FFFFFF;
+	text-decoration:none;
+	color:#000000;
+	vertical-align:middle;
+	font-size:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	}
+#head_menu ul ol.sub li a:hover{
+	color:#000000;
+	background:none;
+	background-color:#FFCC00;
+	}
+
+#head_menu ul li.a01 a{ background:url(../img/menu/a01.jpg) no-repeat;}
+#head_menu ul li.a01 a:hover{ background:url(../img/menu/a01_on.jpg) no-repeat;}
+#head_menu ul li.a02 a{ background:url(../img/menu/a02.jpg) no-repeat;}
+#head_menu ul li.a02 a:hover{ background:url(../img/menu/a02_on.jpg) no-repeat;}
+#head_menu ul li.a03 a{ background:url(../img/menu/a03.jpg) no-repeat;}
+#head_menu ul li.a03 a:hover{ background:url(../img/menu/a03_on.jpg) no-repeat;}
+#head_menu ul li.a04 a{ background:url(../img/menu/a04.jpg) no-repeat;}
+#head_menu ul li.a04 a:hover{ background:url(../img/menu/a04_on.jpg) no-repeat;}
+#head_menu ul li.a05 a{ background:url(../img/menu/a05.jpg) no-repeat;}
+#head_menu ul li.a05 a:hover{ background:url(../img/menu/a05_on.jpg) no-repeat;}
+
+
+
+/*メインイメージ*/
+#main_image{
+	clear:left;
+	width:800px;
+	margin:0px;
+	padding:1px;
+	border:solid #333333;
+	border-width:1px;
+	}
+
+#contents{
+	margin:10px;
+	clear:left;
+	zoom:100%;
+	}
+#foot_up{
+	background:url(../img/line_02.gif) no-repeat bottom;
+	clear:both;
+	height:32px;
+	margin:0 0 0 0;
+	}
+#foot{
+	clear:left;
+	background:url(../img/bg_foot.gif) no-repeat;
+	width:820px;
+	height:50px;
+	}
+#copy{
+	line-height:40px;
+	font-size:95%;
+	text-align:center;
+	color:#FFFFFF;
+	padding:2px;
+	}
+#copy a{
+	color:#ffffff;
+	text-decoration:none;
+	}
+#copy a:hover{
+	color:#ffffff;
+	}
+
+/***トップ***/
+#top{
+	width:800px;
+	margin:0;	
+}
+#top div#top_up{
+	width:780px;
+	text-align:left;
+	margin:0px;
+}
+#top div#top_up h1{
+	margin:8px 10px 0 10px;
+	font-size:280%;
+	color:#FF6300;
+}
+
+#top div#top_up h2{
+	margin:8px 10px 0 10px;
+	font-size:200%;
+	color:#63D0A0;
+	font-weight:bold;
+	text-decoration:underline;
+}
+#top div#top_up h3{
+	font-size:125%;
+	font-style:italic
+	font-weight:bold;
+}
+#top div#top_up h4{
+	margin:8px 10px 0 10px;
+	font-size:150%;
+	color:#D0D0A0;
+	font-weight:bold;
+
+}
+
+#top div#top_up div#left{
+	float:left;
+	width:484px;
+	margin:0px 4px;
+}
+#top div#top_up div#right{
+	float:right;
+	width:270px;
+	margin:0px 4px;
+	}
+#top div#top_up div#right div#info{
+	background:url(../img/top/bg_info.png) no-repeat;
+	height:200px;
+	margin:0px;
+	padding:1px 1px 0px 1px;
+}
+#top div#top_up div#right div#info div#info_inner{
+	overflow:auto;
+	height:200px;
+}
+#top div#top_up div#right div#info div#info_inner h4{
+	margin:8px 10px 0 10px;
+	font-size:100%;
+	color:#FF9900;
+	}
+#top div#top_up div#right div#info div#info_inner p{
+	margin:4px 10px 0 10px;
+	}
+
+#top div#top_up div#right div#tweet{
+	float:right;
+	height:400px;
+	padding 1px;
+}
+
+#top div#btm{
+	clear:both;
+	width:780px;
+	}
+#top div#btm div#bnr_sps{
+	}
+#top div#btm div#bnr_sps ul{
+	list-style-type:none;
+ 	}
+
+#top div#btm div#bnr_sps ul li{
+ float:left;
+ margin:8px;
+ }
+#top div#btm div#bnr_sps ul li a:hover img{
+	filter:alpha(opacity=85); /*IE*/
+	-moz-opacity:0.85; /*FF*/
+	}
+
+/***その他のページ***/
+#sub_page{
+}
+
+#sub_page p{
+	margin:2px 0 16px 0;
+	line-height:200%;
+	font-size:100%;
+}
+#sub_page h1{
+	background:url(../img/bg_h3.jpg) no-repeat;
+	font-size:140%;
+	line-height:52px;
+	height:52px;
+	color:#FFFFFF;
+	vertical-align:bottom;
+	text-indent:10px;
+	}
+
+#sub_page h2{
+	font-size:120%;
+	line-height:1.0em;
+	vertical-align:top;
+	margin:20px 0 0 0;
+	color:#cccccc;
+	border:solid #FFCC00;
+	text-indent:5px;
+	border-width:0 0 0 3px;
+	}
+
+#sub_page h3{
+	margin:8px 10px 0 10px;
+	font-size:24px;
+	color:#2063FF;
+	font-weight:bold;
+	text-decoration:underline;
+	}
+#sub_page h4{
+	margin:8px 8px 0 8px;
+	font-size:12px;
+	color:#99FF63;
+	font-weight:bold;
+	}
+
+#sub_page h6{
+	margin:2px 0 16px 0;
+	font-size:12px;
+	color:#729963;
+	text-align:center;
+}
+
+#sub_page div#about{
+	clear:both;
+	width:800px;
+	}
+#sub_page div#about h3{
+	margin:2px 0 16px 0;
+	font-size:24px;
+	color:#729963;
+	border-style:groove;
+	border-width:5px;
+	border-color:#333333;
+	
+	}
+#sub_page div#about div.top{
+	clear:both;
+	width:640px;
+	margin:10px 70px;
+	}
+
+#sub_page div#about div.left{
+	float:left;
+	width:370px;
+	margin:10px;
+	}
+#sub_page div#about div.right{
+	float:right;
+	width:370px;
+	margin:10px;
+	}
+#sub_page div#about div.btm{
+	clear:both;
+	width:780px;
+	margin:10px;
+	}
+
+
+
+#sub_page div#show{}
+#sub_page div#show#show2{}
+
+#sub_page div#show p{
+	margin:0;
+	line-height:200%;
+	}
+
+#sub_page div#show h5{
+	margin:8px 10px 0 10px;
+	font-size:36px;
+	color:#FF6300;
+	}
+#sub_page div#show h6{
+	margin:8px 10px 0 10px;
+	font-size:24px;
+	color:#FF6300;
+	}
+#sub_page div#show div.left{
+	float:left;
+	width:440px;
+	margin:10px;
+	}
+#sub_page div#show div.right{
+	text-align:center;
+	float:right;
+	width:280px;
+	margin:10px;
+	}
+#sub_page div#show div.center{
+	text-align:center;
+	width:780px;
+	margin:10px;
+	}
+#sub_page div#show div.center#show2 div.center{
+	width:780px;
+	margin:auto;
+	}
+#sub_page div#show div.btm{
+	clear:both;
+	text-align:left;
+	width:780px;
+	margin:10px;
+	}
+#sub_page div#mail{
+	text-align:center;
+	width:100%;
+	margin:10px;
+}
+#sub_page div#mail div.form{
+	text-align:left;
+	line-height:120%;
+	float:left;
+	width:380px;
+	margin:10px;
+}
+
+
+
+@media print{
+
+#container{
+	width:820px;
+	}
+}

@@ -1,0 +1,440 @@
+/* CSS Document */
+
+/*--------------------------------
+	初期化
+----------------------------------*/
+* {
+	/* font-family 前にあるものから優先的に使用される */
+	/* Windows:ＭＳ Ｐゴシック, ＭＳ Ｐ明朝 */
+	/* Mac:ヒラギノ角ゴ Pro W3, ヒラギノ明朝 Pro W3 */
+	/* Linux:sans, serif が標準装備 */
+	font-family: "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "sans";
+
+	/* 余白（外側） */
+	margin: 0px;
+
+	/* 余白（内側）あまり使うべきでない */
+	padding: 0px;
+}
+
+table, div {
+	/* 余白。空いていれば自動で空白を詰める */
+	margin:auto;
+}
+
+
+/* 見出し */
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	color: #FFF;
+	/* 見出しにメイリオは極力使わない。border-bottomの位置がおかしくなる。 */
+	font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "sans";
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+	/* 見出しはリンク付きでも何もしない */
+	text-decoration: none;
+}
+
+/* 段落 */
+p {
+	font-size: 100%;
+	color: #DDD;
+	/*行間の設定*/
+	line-height: 150%;
+}
+
+/* リストアップ（記号・数字） */
+ul, ol {
+	font-size: 100%;
+	color: #FFF;
+	/*行間の設定*/
+	line-height: 150%;
+}
+
+a {
+	/* 通常のリンクテキストカラー */
+	color:#0099FF;
+}
+
+a:hover {
+	/* マウスが乗った時の通常のリンクテキストカラー */
+	color:#FF9900;
+
+	/* マウスが乗った時下線を表示 */
+	text-decoration:underline;
+}
+
+* a img{
+	/* リンク画像の外枠を表示させない */
+	text-decoration: none;
+	border: none;
+}
+
+
+
+/*--------------------------------
+	基本レイアウト
+----------------------------------*/
+
+body {
+	/* テキストだけでなく画像も寄せる */
+	text-align: center;
+
+	/* 背景の色 */
+	background-color:#000000;
+	
+	/* 背景画像 */
+	background-image:url(../img/bg_alarm02.jpg);
+
+	/* フォントサイズ調整 */
+	font-size: 12px; /* モダンブラウザ */
+	*font-size: 80%; /* IE 7 */
+}
+
+div#bg{
+	/* コンテンツの基盤 */
+	width:820px;
+	/* 基盤のグレー画像 */
+	background:url(../img/bg_orange.jpg) repeat-y;
+
+	margin: 0px auto;
+	
+	text-align: center;
+}
+
+div#header {
+	clear: left;
+	background:url(../img/bg_head.jpg) no-repeat;
+	width:820px;
+	height:8px;
+}
+
+/* タイトル */
+div#title {
+	width: 780px;
+	margin: 0px auto;
+}
+
+div#title > h1 {
+	text-align: center;
+	width: 70%;
+	height: 32px;
+	line-height: 32px;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 20px auto;
+	border-left: 8px solid #22A;
+	border-right: 8px solid #22A;
+	border-top: 1px solid #DD9;
+	border-bottom: 1px solid #DD9;
+	color: #CBF;
+}
+
+div#title div#title_left {
+	width: 500px;
+	margin: 0px auto;
+	float: left;
+}
+
+div#title div#title_left div#info {
+	width: 500px;
+	margin: 20px auto;
+}
+
+div#title div#title_left h1, h2, h4 {
+	width: 400px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 10px;
+	text-align: left;
+	text-indent: 0.8em;
+	color: #DBF;
+}
+
+div#title div#title_left div#info h1 {
+	border-left: 8px solid #F92;
+	border-bottom: 1px solid #FFF;
+}
+
+div#title div#title_left div#info h2 {
+	border-left: 8px solid #084;
+	border-bottom: 1px solid #FFF;
+}
+
+div#title div#title_left div#info h3 {
+	font-family: "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "sans";
+	text-align: center;
+	width: 480px;
+	line-height: 10px;
+	margin: 8px auto;
+	color: #000;
+}
+
+div#title div#title_left div#info h4 {
+	border-left: 8px solid #F88;
+	border-bottom: 1px solid #FFF;
+}
+
+div#title div#title_left p {
+	text-align: left;
+	text-indent: 0.8em;
+	width: 480px;
+	line-height: 24px;
+	margin: 8px auto;
+	color: #DDD;
+}
+
+
+div#title div#title_right {
+	width: 280px;
+	margin: 0px auto;
+	float: right;
+}
+div#title div#title_btm {
+	width: 780px;
+	margin: 0px auto;
+	clear: both;
+}
+
+div#title div#title_right div#tweet {
+	width: 270px;
+	margin: 20px auto;
+	clear: both;
+}	
+
+
+
+
+div#line {
+	width: 100%;
+	height: 10px;
+	margin: 20px auto;
+	text-align: center;
+	clear: both;
+	overflow: hidden;
+}
+
+h6.line02 {
+	height: 36px;
+	line-height: 36px;
+	font-family: sans-serif, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	font-size: 120%;
+	font-weight: normal;
+	text-align: center;
+	color: #668;
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+
+/* 内容を詰め込む区画 */
+div#contents {
+	width: 780px;
+	margin: 20px auto;
+	text-align: left;
+	clear: both;
+}
+
+div#contents > h1 {
+	width: 400px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 28px;
+	font-weight: bold;
+	margin: 10px 10px;
+	border-left: 8px solid #22A;
+	border-bottom: 1px solid #FFF;
+	text-indent: 0.8em;
+	color: #DBF;
+}
+
+div#contents h3 {
+	width: 80px;
+	height: 18px;
+	margin: 0px auto;
+	line-height: 18px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #CD9;
+}
+
+ul {
+	text-align: center;
+	list-style-type: none;
+	margin: 10px auto;
+}
+
+/* ページのフッター */
+div#foot {
+	clear: both;
+	background: url(../img/bg_foot.jpg) no-repeat;
+	width: 820px;
+	height: 8px;
+}
+
+/* --------------------------------
+     各ページのコンテンツの中身
+-------------------------------- */
+
+div#fl_left {
+	width: 380px;
+	margin: 20px auto;
+	float: left;
+}
+
+div#fl_right {
+	width: 380px;
+	margin: 20px auto;
+	float: right;
+}
+
+dov#info_top {
+	width: 780px;
+	margin: 32px auto;
+	clear: both;
+}
+
+div#info_top h1 {
+	text-align: center;
+	width: 340px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 10px auto;
+	color: #DBF;
+	clear: both;
+}
+
+div#info_top h2 {
+	font-family: "メイリオ", Meiryo;
+	text-align: center;
+	width: 200px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 10px auto;
+	border-left: 8px solid #22A;
+	border-right: 8px solid #22A;
+	color:#EE9;
+}
+
+div#cast {
+	width: 260px;
+	margin: 24px auto;
+	float: left;
+}
+
+div#cast > h3 {
+	border-left: 8px solid #8D1;
+	border-right: 8px solid #8D1;
+}
+
+div#cast > ul {
+	width: 90px;
+	clear: both;
+}
+
+div#staff {
+	width: 260px;
+	margin: 24px auto;
+	float: left;
+}
+
+div#staff > h3 {
+	border-left: 8px solid #E29;
+	border-right: 8px solid #E29;
+}
+
+div#staff > ul.work {
+	width: 80px;
+	float: left;
+}
+div#staff > ul.name {
+	width: 180px;
+	float: left;
+}
+div#staff > ul.end {
+	width: 120px;
+	clear: both;
+}
+
+div#date {
+	width: 260px;
+	margin: 24px auto;
+	float: left;
+}
+
+div#date > h3 {
+	border-left: 8px solid #57C;
+	border-right: 8px solid #57C;
+}
+
+div#date > ul {
+	width: 260px;
+	clear: both;
+}
+
+div#date > p {
+	text-align: center;
+	margin: 20px auto;
+}
+
+div#place {
+	width: 780px;
+	margin: 24px auto;
+	clear: both;
+	text-align: center;
+}
+
+div#place > h3 {
+	width: 160px;
+	border-left: 8px solid #619;
+	border-right: 8px solid #619;
+}
+div#place > p {
+	text-align: center;
+	font-weight: bold;
+	margin: 6px auto;
+}
+
+div#place div#map{
+	width: 760px;
+	margin: 0px auto;
+	border: 2px solid #000;
+	clear: both;
+}
+
+
+/* バナースペース */
+div#bnr_sps {
+	width: 720;
+	margin: 0px auto;
+}
+
+div#bnr_sps h1 {
+	width: 400px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #DBF;
+	margin: 0px auto;
+}
+
+div#bnr_sps ul{
+	/* バナーのリストに記号は付けない */
+	list-style-type:none;
+}
+
+div#bnr_sps ul li {
+	/* バナーのリスト左右8pixel空ける */
+	margin: 20px 8px;
+	float: left;
+}
