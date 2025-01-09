@@ -107,22 +107,61 @@
 	 			<h4>お問い合わせフォーム！</h4>
 	 			<div class="hline"></div>
 		 			<p>入部・見学希望、ご質問等何でも結構です！<br>下の入力フォームに入力後、「送信」ボタンを押してください。</p>
-		 			<!--
-		 			<form action="mailto:&#109;&#117;&#115;&#117;&#109;&#101;&#110;&#111;&#121;&#111;&#107;&#97;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;?subject=テスト〜" method="POST" enctype="text/plain" name="mail">
-					  <div class="form-group">
-					    <label for="InputName">お名前</label>
-					    <input type="name" class="form-control" id="InputName" placeholder="Enter your name" name="お名前\n">
-					  </div>
-					  <div class="form-group">
-					    <label for="InputEmail">Eメールアドレス</label>
-					    <input type="text" class="form-control" id="InputEmail" placeholder="Enter email" name="Eメールアドレス\n">
-					  </div>
-					  <div class="form-group">
-					  	<label for="message">本文</label>
-					  	<textarea name="本文\n" class="form-control" id="message" rows="3"></textarea>
-					  </div>
-					  <button type="submit" class="btn btn-theme">送信</button>
-					</form>-->
+		 			
+		 			<form action="send_mail.php" method="POST" name="contact-form" id="contact-form">
+						<!-- お名前入力フィールド -->
+						<div class="form-group">
+							<label for="InputName">お名前</label>
+							<input type="text" class="form-control" id="InputName" placeholder="お名前を入力してください" name="name" required>
+						</div>
+						
+						<!-- メールアドレス入力フィールド -->
+						<div class="form-group">
+							<label for="InputEmail">Eメールアドレス</label>
+							<input type="email" class="form-control" id="InputEmail" placeholder="メールアドレスを入力してください" name="email" required>
+						</div>
+						
+						<!-- メッセージ入力フィールド -->
+						<div class="form-group">
+							<label for="message">本文</label>
+							<textarea name="message" class="form-control" id="message" rows="5" placeholder="メッセージを入力してください" required></textarea>
+						</div>
+						
+						<!-- 送信ボタン -->
+						<button type="submit" class="btn btn-theme">送信</button>
+					</form>
+						
+						<!-- フォーム送信後のメッセージ表示領域 -->
+					<div id="form-messages" class="mt-3"></div>
+					<script>
+						const form = document.querySelector('form[name="contact-form"]');
+						const formMessages = document.getElementById('form-messages');
+					
+						form.addEventListener('submit', function(event) {
+							event.preventDefault(); // フォームのデフォルト送信を防ぐ
+					
+							const formData = new FormData(form); // フォームデータを取得
+					
+							fetch(form.action, { // フォーム送信先のPHPスクリプトにデータを送信
+								method: form.method,
+								body: formData
+							})
+							.then(response => response.text()) // レスポンスをテキストとして取得
+							.then(data => {
+								if (data === "メッセージが送信されました。ありがとうございます！") {
+									formMessages.innerHTML = '<div class="alert alert-success">' + data + '</div>';
+									form.reset(); // フォームをリセット
+								} else {
+									// エラーメッセージを表示
+									formMessages.innerHTML = '<div class="alert alert-danger">' + data + '</div>';
+								}
+							})
+							.catch(error => {
+								// 失敗メッセージを表示
+								formMessages.innerHTML = '<div class="alert alert-danger">メッセージの送信に失敗しました。もう一度お試しください。</div>';
+							});
+						});
+					</script>
 
 <!--ninja_style_mailform-->
 <script type="text/javascript" src="http://mf1.shinobi.jp/call/dc03e27a7caa048fc03f754bb0ef8cbe/NEWMAIL.js" charset="utf-8"></script>
