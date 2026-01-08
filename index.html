@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXLHZWHB04"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-ZXLHZWHB04');
@@ -57,7 +57,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><span class="hidden-sm hidden-xs hidden-md">東京科学大学演劇研究部　</span>ツバクラメ<span class="hidden-sm hidden-xs">　公式HP</span></a>
+        <a class="navbar-brand" href="index.html"><span
+            class="hidden-sm hidden-xs hidden-md">東京科学大学演劇研究部　</span>ツバクラメ<span
+            class="hidden-sm hidden-xs">　公式HP</span></a>
       </div>
       <div class="navbar-collapse collapse navbar-right">
         <ul class="nav navbar-nav">
@@ -86,7 +88,7 @@
   </div>
 
   <div id="shared-content"></div> <!-- shared_service.htmlの情報がこの中に入る -->
-  
+
   <div id="shared-date"></div> <!-- shared_date.htmlの情報がこの中に入る -->
   <!--/container -->
   <!-- *****************************************************************************************************************
@@ -98,15 +100,22 @@
         <div class="col-sm-4 col-md-4 col-lg-4">
           <h4>About</h4>
           <div class="hline-w"></div>
-          <p>東京科学大学演劇研究部「ツバクラメ」公式サイトです。このサイトを見て演劇に興味をもった方はぜひ一度<a href="contact.html" target="_blank">お問い合わせ</a>よりご連絡ください！！直接部室に来ていただいても構いません！</p>
+          <p>東京科学大学演劇研究部「ツバクラメ」公式サイトです。このサイトを見て演劇に興味をもった方はぜひ一度<a href="contact.html"
+              target="_blank">お問い合わせ</a>よりご連絡ください！！直接部室に来ていただいても構いません！</p>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
           <h4>Social Sharing</h4>
           <div class="hline-w"></div>
           <p>
-            <a href="http://www.facebook.com/share.php?u=http://titechdramaclub.yu-nagi.com/" onclick="window.open(this.href, 'facebookwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><i class="fa fa-facebook"></i></a>
-            <a href="http://twitter.com/share?text=%e5%8a%87%e5%9b%a3%e5%a8%98%e3%81%ae%e4%ba%88%e6%84%9f%e5%85%ac%e5%bc%8fHP%2d%e6%9d%b1%e4%ba%ac%e5%b7%a5%e6%a5%ad%e5%a4%a7%e5%ad%a6%e6%bc%94%e5%8a%87%e7%a0%94%e7%a9%b6%e9%83%a8&amp;url=http://titechdramaclub.yu-nagi.com&amp;via=musumenoyokan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.instagram.com/titech_engeki/?hl=ja" onclick="window.open(this.href, 'facebookwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><i class="fa fa-instagram"></i></a>
+            <a href="http://www.facebook.com/share.php?u=http://titechdramaclub.yu-nagi.com/"
+              onclick="window.open(this.href, 'facebookwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><i
+                class="fa fa-facebook"></i></a>
+            <a href="http://twitter.com/share?text=%e5%8a%87%e5%9b%a3%e5%a8%98%e3%81%ae%e4%ba%88%e6%84%9f%e5%85%ac%e5%bc%8fHP%2d%e6%9d%b1%e4%ba%ac%e5%b7%a5%e6%a5%ad%e5%a4%a7%e5%ad%a6%e6%bc%94%e5%8a%87%e7%a0%94%e7%a9%b6%e9%83%a8&amp;url=http://titechdramaclub.yu-nagi.com&amp;via=musumenoyokan"
+              onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;"
+              rel="nofollow"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/titech_engeki/?hl=ja"
+              onclick="window.open(this.href, 'facebookwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><i
+                class="fa fa-instagram"></i></a>
           </p>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
@@ -134,86 +143,86 @@
   <script src="assets/js/load_shared_service.js"></script>
   <script src="assets/js/load_shared_date.js"></script>
   <script>
-  // Portfolio
-  (function($) {
-    "use strict";
-    var $container = $('.portfolio'),
-      $items = $container.find('.portfolio-item'),
-      portfolioLayout = 'fitRows';
+    // Portfolio
+    (function ($) {
+      "use strict";
+      var $container = $('.portfolio'),
+        $items = $container.find('.portfolio-item'),
+        portfolioLayout = 'fitRows';
 
-    if ($container.hasClass('portfolio-centered')) {
-      portfolioLayout = 'masonry';
-    }
-
-    $container.isotope({
-      filter: '*',
-      animationEngine: 'best-available',
-      layoutMode: portfolioLayout,
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      },
-      masonry: {}
-    }, refreshWaypoints());
-
-    function refreshWaypoints() {
-      setTimeout(function() {}, 1000);
-    }
-
-    $('nav.portfolio-filter ul a').on('click', function() {
-      var selector = $(this).attr('data-filter');
-      $container.isotope({
-        filter: selector
-      }, refreshWaypoints());
-      $('nav.portfolio-filter ul a').removeClass('active');
-      $(this).addClass('active');
-      return false;
-    });
-
-    function getColumnNumber() {
-      var winWidth = $(window).width(),
-        columnNumber = 1;
-
-      if (winWidth > 1200) {
-        columnNumber = 5;
-      } else if (winWidth > 950) {
-        columnNumber = 4;
-      } else if (winWidth > 600) {
-        columnNumber = 3;
-      } else if (winWidth > 400) {
-        columnNumber = 2;
-      } else if (winWidth > 250) {
-        columnNumber = 1;
+      if ($container.hasClass('portfolio-centered')) {
+        portfolioLayout = 'masonry';
       }
-      return columnNumber;
-    }
 
-    function setColumns() {
-      var winWidth = $(window).width(),
-        columnNumber = getColumnNumber(),
-        itemWidth = Math.floor(winWidth / columnNumber);
+      $container.isotope({
+        filter: '*',
+        animationEngine: 'best-available',
+        layoutMode: portfolioLayout,
+        animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
+        },
+        masonry: {}
+      }, refreshWaypoints());
 
-      $container.find('.portfolio-item').each(function() {
-        $(this).css({
-          width: itemWidth + 'px'
-        });
+      function refreshWaypoints() {
+        setTimeout(function () { }, 1000);
+      }
+
+      $('nav.portfolio-filter ul a').on('click', function () {
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+          filter: selector
+        }, refreshWaypoints());
+        $('nav.portfolio-filter ul a').removeClass('active');
+        $(this).addClass('active');
+        return false;
       });
-    }
 
-    function setPortfolio() {
-      setColumns();
-      $container.isotope('reLayout');
-    }
+      function getColumnNumber() {
+        var winWidth = $(window).width(),
+          columnNumber = 1;
 
-    $container.imagesLoaded(function() {
-      setPortfolio();
-    });
+        if (winWidth > 1200) {
+          columnNumber = 5;
+        } else if (winWidth > 950) {
+          columnNumber = 4;
+        } else if (winWidth > 600) {
+          columnNumber = 3;
+        } else if (winWidth > 400) {
+          columnNumber = 2;
+        } else if (winWidth > 250) {
+          columnNumber = 1;
+        }
+        return columnNumber;
+      }
 
-    $(window).on('resize', function() {
-      setPortfolio();
-    });
-  })(jQuery);
+      function setColumns() {
+        var winWidth = $(window).width(),
+          columnNumber = getColumnNumber(),
+          itemWidth = Math.floor(winWidth / columnNumber);
+
+        $container.find('.portfolio-item').each(function () {
+          $(this).css({
+            width: itemWidth + 'px'
+          });
+        });
+      }
+
+      function setPortfolio() {
+        setColumns();
+        $container.isotope('reLayout');
+      }
+
+      $container.imagesLoaded(function () {
+        setPortfolio();
+      });
+
+      $(window).on('resize', function () {
+        setPortfolio();
+      });
+    })(jQuery);
   </script>
   <!--Google Analitics
 <script>
