@@ -1,0 +1,58 @@
+name: Archive selected files to stage on test branch
+
+on:
+  push:
+    branches:
+      - test
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive-files:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: test
+
+      - name: Archive files into timestamped /stage folder
+        shell: bash
+        run: |
+          set -e
+
+          stamp="$(date +'%Y%m%d-%H%M%S')"
+          target_dir="stage/$stamp"
+          mkdir -p "$target_dir"
+
+          moved=0
+
+          for file in index.html shared_date.html shared_service.html; do
+            if [ -f "$file" ]; then
+              mv "$file" "$target_dir/$file"
+              echo "Moved: $file -> $target_dir/$file"
+              moved=1
+            else
+              echo "Not found, skipped: $file"
+            fi
+          done
+
+          echo "MOVED=$moved" >> "$GITHUB_ENV"
+
+      - name: Commit and push changes
+        if: env.MOVED == '1'
+        shell: bash
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+          git commit -m "Archive selected files into stage"
+          git push origin test
