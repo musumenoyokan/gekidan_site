@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
           ref: test
 
-      - name: Archive files into timestamped /stage folder
+      - name: Copy files into timestamped /stage folder
         shell: bash
         run: |
           set -e
@@ -30,22 +30,22 @@ jobs:
           target_dir="stage/$stamp"
           mkdir -p "$target_dir"
 
-          moved=0
+          copied=0
 
           for file in index.html shared_date.html shared_service.html; do
             if [ -f "$file" ]; then
-              mv "$file" "$target_dir/$file"
-              echo "Moved: $file -> $target_dir/$file"
-              moved=1
+              cp "$file" "$target_dir/$file"
+              echo "Copied: $file -> $target_dir/$file"
+              copied=1
             else
               echo "Not found, skipped: $file"
             fi
           done
 
-          echo "MOVED=$moved" >> "$GITHUB_ENV"
+          echo "COPIED=$copied" >> "$GITHUB_ENV"
 
       - name: Commit and push changes
-        if: env.MOVED == '1'
+        if: env.COPIED == '1'
         shell: bash
         run: |
           set -e
@@ -54,5 +54,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add -A
-          git commit -m "Archive selected files into stage"
+          git commit -m "Copy selected files into stage"
           git push origin test
